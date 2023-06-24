@@ -1,0 +1,166 @@
+/* Set the background color to dark */
+body {
+  background-color: #222222;
+}
+
+/* Customize the card appearance */
+.dark-theme-card {
+  background-color: #0a0a0a;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a hover effect for the card */
+.dark-theme-card:hover {
+  transform: scale(1.05);
+}
+
+.dark-theme-card-img {
+  /* Add any custom styles for the card images */
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Customize the card footer */
+.dark-theme-card-footer {
+  background-color: #022fd3;
+  color: white;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Add a fade-in animation for the card */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the fade-in animation to the card */
+.dark-theme-card {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* Add a pulse animation for the card on load */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Apply the pulse animation to the card on load */
+.dark-theme-card {
+  animation: pulse 1.5s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+
+/* Add a slide-up animation for the card footer */
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the slide-up animation to the card footer */
+.dark-theme-card-footer {
+  animation: slide-up 0.5s ease-out;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lightMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.center_div {
+  display: inline-block;
+  font-size: 10rem;
+  color: #fff;
+  background: linear-gradient(90deg, #f1c40f, #d35400, #f1c40f);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: zoom 3s ease-in-out, lightMove 2s linear infinite;
+}
+
+
+
+.card {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+}
+
+.badge {
+  background-color: #28a745;
+  color: #fff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-top: 4px; /* Add some spacing between the badge and rating */
+}
+
+.cover-photo img {
+  width: auto; /* Let the width adjust automatically based on the container */
+  height: 65%; /* Set the desired height of the cover photo container */
+  display: block; /* Prevent any unwanted spacing or alignment issues */
+  margin: 0; /* Remove any default margin */
+}
+
+
+
+
+
+
