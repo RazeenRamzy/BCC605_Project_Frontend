@@ -4,6 +4,7 @@ import Footer from '../components/footer/Footer'
 import Faq from '../components/faq/Faq'
 
 
+
 export class FaqPage extends Component {
   render() {
     return (
