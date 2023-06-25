@@ -3,24 +3,23 @@ import { Container, Row } from 'react-bootstrap';
 import Footer from '../components/footer/Footer';
 import Menu from '../components/menu/Menu';
 import Carousel from 'react-bootstrap/Carousel';
-import imagefirst from '../asset/images/Slide1.jpeg';
-import imagesecond from '../asset/images/Slide2.jpeg';
-import imagethird from '../asset/images/Slide3.jpeg';
+import picsSarchBook from '../asset/images/searchBook.jpeg';
 import '../asset/css/custom-styles.css';
 
 function BookSearch({ searchBooks, query, setQuery, books }) {
-  return (
-    <div className="search-bar">
-      <input
-        type="text"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Enter book title or keywords"
-      />
-      <button onClick={searchBooks}>Search</button>
-    </div>
-  );
-}
+    return (
+      <div className="search-bar">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Enter book title or keywords"
+        />
+        <button onClick={searchBooks}>Search</button>
+      </div>
+    );
+  }
+  
 
 function HotelsPage() {
   const [query, setQuery] = useState('');
@@ -43,9 +42,9 @@ function HotelsPage() {
       <Menu />
       <Carousel>
         <Carousel.Item>
-          <img className="d-block w-100" src={imagefirst} alt="Slide1" style={{ height: '700px' }} />
+          <img className="d-block w-100" src={picsSarchBook} alt="SearchBook" style={{ height: '700px' }} />
           <Carousel.Caption>
-            <h3 style={{ color: 'white' }}>Reading is the key that unlocks the doors of imagination, and the BCAS MLibrarian holds the treasure trove.</h3>
+            <h3 style={{ color: 'orange' }}>Search for books, and let them search for you.</h3>
             <BookSearch
               searchBooks={searchBooks}
               query={query}
@@ -56,7 +55,7 @@ function HotelsPage() {
         </Carousel.Item>
       </Carousel>
       <header className="page-header">
-        <h1>Welcome to Hotels Page</h1>
+        {/* <h1>Let the search for books ignite your passion for reading.</h1> */}
       </header>
       <Container>
         <Row>
