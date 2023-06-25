@@ -1,156 +1,98 @@
-import React, { Component, Fragment } from 'react'
-import { Container, Row, Form } from 'react-bootstrap'
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import axios from 'axios';
-import APICALL from '../api/APICALL';
-import Table from 'react-bootstrap/Table';
-import Menu from '../components/menu/Menu';
+import React, { useState } from 'react';
+import { Container, Row } from 'react-bootstrap';
 import Footer from '../components/footer/Footer';
+import Menu from '../components/menu/Menu';
+import Carousel from 'react-bootstrap/Carousel';
+import imagefirst from '../asset/images/Slide1.jpeg';
+import imagesecond from '../asset/images/Slide2.jpeg';
+import imagethird from '../asset/images/Slide3.jpeg';
+import '../asset/css/custom-styles.css';
 
+function BookSearch() {
+  const [query, setQuery] = useState('');
+  const [books, setBooks] = useState([]);
 
-export class HotelsPage extends Component {
-
-    constructor() {
-        super()
-        this.state = {
-            hotelname: "",
-            hotelemail: "",
-            hotelmobile: "",
-            roomcount: "",
-            hoteladdress: "",
-            hotelDetails: []
-        }
+  const searchBooks = async () => {
+    try {
+      const response = await fetch(
+        `https://www.googleapis.com/books/v1/volumes?q=${query}`
+      );
+      const data = await response.json();
+      setBooks(data.items);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
+  return (
+    <div className="container">
+      <div className="search-bar">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Enter book title or keywords"
+        />
+        <button onClick={searchBooks}>Search</button>
+      </div>
 
-    addhoteltodb = (e) => {
-        e.preventDefault();
-        const data = {
-            hotelname: this.state.hotelname,
-            hotelemail: this.state.hotelemail,
-            hotelmobile: this.state.hotelmobile,
-            roomcount: this.state.roomcount,
-            hoteladdress: this.state.hoteladdress,
-        }
-
-        let submothoel = document.getElementById('submithotel');
-        let orderForm = document.getElementById('orderForm')
-        submothoel.innerHTML = "Adding to DB...";
-        submothoel.disabled = true; // Disable the button
-
-        axios.post(APICALL.Storehotel, data)
-            .then(response => {
-                alert("success")
-                orderForm.reset()
-            }).catch((error) => {
-                console.error(error);
-                // Handle error or display error message
-            }).finally(() => {
-                submothoel.disabled = false; // Enable the button
-            });
-
-    }
-
-
-    componentDidMount() {
-        axios.get(APICALL.Gethotels)
-            .then(response => {
-                this.setState({ hotelDetails: response.data })
-            })
-    }
-
-    render() {
-
-        const hotelDetails = this.state.hotelDetails;
-        const data = hotelDetails.map((hotelDetails, i) => {
-            return <tr key={i.toString}>
-                <td>{hotelDetails.hotelid}</td>
-                <td>{hotelDetails.hotelname}</td>
-                <td>{hotelDetails.hotelmobile}</td>
-                <td>{hotelDetails.roomcount}</td>
-                <td> <Button variant="warning" >Edit</Button> &nbsp;
-                <Button variant="danger" >Delete</Button> &nbsp;
-                </td>
-            </tr>
-        })
-
-
-        return (
-            <Fragment>
-                <Menu />
-
-                <div style={{ marginTop: '70px', position: 'relative' }}>
-                <Container>
-                    <Row>
-                        <Col lg={8}>
-                            <Table striped>
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Hotel name Name</th>
-                                        <th>Hotel Number</th>
-                                        <th>RoomCount </th>
-                                        <th>Action </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   {data}
-                                </tbody>
-                            </Table>
-                        </Col>
-
-                        <Col lg={4}>
-                            <div className="row">
-                                <Form id='orderForm' onSubmit={this.addhoteltodb}>
-                                    <Card>
-                                        <Card.Header>Add Hotels</Card.Header>
-                                        <Card.Body>
-                                            {/* <Card.Title>Special title treatment</Card.Title> */}
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>hotel name</Form.Label>
-                                                <Form.Control onChange={(e) => { this.setState({ hotelname: e.target.value }) }} type="text" placeholder="Enter hotel name" />
-                                            </Form.Group>
-
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>hotel hotel email</Form.Label>
-                                                <Form.Control onChange={(e) => { this.setState({ hotelemail: e.target.value }) }} type="text" placeholder="Enter hotel hotel email" />
-                                            </Form.Group>
-
-
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>hotel mobile</Form.Label>
-                                                <Form.Control onChange={(e) => { this.setState({ hotelmobile: e.target.value }) }} type="text" placeholder="Enter hotel mobile" />
-                                            </Form.Group>
-
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>hotel roomcount</Form.Label>
-                                                <Form.Control onChange={(e) => { this.setState({ roomcount: e.target.value }) }} type="text" placeholder="Enter hotel roomcount" />
-                                            </Form.Group>
-
-                                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                                <Form.Label>hotel address</Form.Label>
-                                                <Form.Control onChange={(e) => { this.setState({ hoteladdress: e.target.value }) }} type="text" placeholder="Enter hotel hoteladdress" />
-                                            </Form.Group>
-
-
-
-                                            <Button variant="primary" type='submit' id='submithotel'>Submit</Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Form>
-
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
-                </div>
-                <Footer />
-                
-            </Fragment>
-        )
-    }
+      <div className="content-grid">
+        <div className="book-column">
+          {books.map((book, index) => (
+            <div className="book-card" key={book.id}>
+              <img
+                src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail}
+                alt={book.volumeInfo.title}
+              />
+              <div className="book-details">
+                <h3>{book.volumeInfo.title}</h3>
+                <p>{book.volumeInfo.authors && book.volumeInfo.authors.join(', ')}</p>
+                <p>{book.volumeInfo.publishedDate}</p>
+              </div>
+              {(index + 1) % 5 === 0 && <div className="column-divider" />}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default HotelsPage
+function HotelsPage() {
+  return (
+    <React.Fragment>
+      <Menu />
+      <Carousel>
+        <Carousel.Item>
+          <img className="d-block w-100" src={imagefirst} alt="Slide1" style={{ height: '700px' }} />
+          <Carousel.Caption>
+            <h3 style={{ color: 'white' }}>Reading is the key that unlocks the doors of imagination, and the BCAS MLibrarian holds the treasure trove.</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={imagesecond} alt="Slide2" style={{ height: '700px' }} />
+          <Carousel.Caption>
+            <h3 style={{ color: 'white' }}>Reading is a passport to endless adventures, and the MLibrarian is your trusted guide in this remarkable journey.</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src={imagethird} alt="Slide3" style={{ height: '700px' }} />
+          <Carousel.Caption>
+            <h3 style={{ color: 'white' }}>Reading with the aid of MLibrarian, where technology meets literature, creates a harmonious symphony of learning and innovation.</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      <header className="page-header">
+        <h1>Welcome to Hotels Page</h1>
+      </header>
+      <Container>
+        <Row>
+          <BookSearch />
+        </Row>
+      </Container>
+      <Footer />
+    </React.Fragment>
+  );
+}
+
+export default HotelsPage;
