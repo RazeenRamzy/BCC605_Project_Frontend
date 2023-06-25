@@ -69,7 +69,7 @@ function HotelsPage() {
             <h3 style={{ color: 'white' }}>Reading is the key that unlocks the doors of imagination, and the BCAS MLibrarian holds the treasure trove.</h3>
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
+        {/* <Carousel.Item>
           <img className="d-block w-100" src={imagesecond} alt="Slide2" style={{ height: '700px' }} />
           <Carousel.Caption>
             <h3 style={{ color: 'white' }}>Reading is a passport to endless adventures, and the MLibrarian is your trusted guide in this remarkable journey.</h3>
@@ -80,7 +80,7 @@ function HotelsPage() {
           <Carousel.Caption>
             <h3 style={{ color: 'white' }}>Reading with the aid of MLibrarian, where technology meets literature, creates a harmonious symphony of learning and innovation.</h3>
           </Carousel.Caption>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
       <header className="page-header">
         <h1>Welcome to Hotels Page</h1>
