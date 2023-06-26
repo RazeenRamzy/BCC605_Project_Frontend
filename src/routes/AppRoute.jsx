@@ -3,8 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import LoginPage from '../pages/LoginPage'
 import HomePage from '../pages/HomePage'
 import Contact from '../components/contact/Contact'
-import TourPage from '../pages/TourPage'
-import PopularTourPage from '../pages/PopularTourPage'
+import IoTbookPage from '../pages/IoTbookPage'
+import CCodePage from '../pages/CCodePage'
 import DiscoverTourPage from '../pages/DiscoverTourPage'
 import SubscriberPage from '../pages/SubscriberPage'
 import FaqPage from '../pages/FaqPage'
@@ -15,7 +15,7 @@ import HowToPurchasePage from '../pages/HowToPurchasePage'
 import PrivacyPolicyPage from '../pages/PrivacyPolicyPage'
 import RefundPolicyPage from '../pages/RefundPolicyPage'
 import BookingDetailsEditPage from '../pages/BookingDetailsEditPage'
-import FamilyTourPage from '../pages/FamilyTourPage'
+import BadSciPage from '../pages/BadSciPage'
 import HoneymoonTourPage from '../pages/HoneymoonTourPage'
 import JaffnaTourPage from '../pages/JaffnaTourPage'
 import ColomboTourPage from '../pages/ColomboTourPage'
@@ -38,10 +38,10 @@ class AppRoute extends Component {
             
 
             <Route exact path="/contact" element={<ContactPage />} />
-            <Route exact path="/tourpackages" element={< TourPage/>} />
+            {/* <Route exact path="/tourpackages" element={< TourPage/>} /> */}
 
             <Route exact path="/contact" element={< Contact/>} />
-            <Route exact path="/SafariTour" element={< TourPage/>} />
+            <Route exact path="/SafariTour" element={< IoTbookPage/>} />
 
             <Route exact path="/login" element={< LoginPage/>} />
             <Route exact path="/subscriber" element={< SubscriberPage/>} />
@@ -65,8 +65,8 @@ class AppRoute extends Component {
 
 
 
-            <Route exact path="/Popular" element={< PopularTourPage/>} />
-            <Route exact path="/FamilyTrip" element={< FamilyTourPage/>} />
+            <Route exact path="/Popular" element={< CCodePage/>} />
+            <Route exact path="/FamilyTrip" element={< BadSciPage/>} />
             <Route exact path="/Discover" element={< DiscoverTourPage/>} />
             <Route exact path="/Honeymoon" element={< HoneymoonTourPage/>} />
             <Route exact path="/JaffnaTour" element={< JaffnaTourPage/>} />

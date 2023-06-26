@@ -289,6 +289,24 @@ body {
   color: #1a0808;
 }
 
+/*image holder for book info*/
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  max-width: 600px; 
+  margin: 0 auto; 
+}
+
+.book-image {
+  max-width: 300%; 
+  height: auto; 
+}
+
+.page-container {
+  background-color: #161212; /* Replace with your desired background color */
+}
+
 
 
 
