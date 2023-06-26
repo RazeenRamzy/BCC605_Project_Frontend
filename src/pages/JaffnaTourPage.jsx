@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Menu from '../components/menu/Menu'
 import Footer from '../components/footer/Footer'
-import JaffnaTour from '../components/fullpackages/JaffnaTour'
+import JaffnaTour from '../components/fullpackages/TFSBook'
 
 class JaffnaTourPage extends Component {
   render() {
