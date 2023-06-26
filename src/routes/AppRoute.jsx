@@ -18,7 +18,7 @@ import BookingDetailsEditPage from '../pages/BookingDetailsEditPage'
 import BadSciPage from '../pages/BadSciPage'
 import EMythBookPage from '../pages/EMythBookPage'
 import JaffnaTourPage from '../pages/JaffnaTourPage'
-import ColomboTourPage from '../pages/ColomboTourPage'
+import SoftSkillBookPage from '../pages/SoftSkillBookPage'
 import KandyTourPage from '../pages/KandyTourPage'
 import BlogPopularPage from '../pages/BlogPopularPage'
 import BlogBeachPage from '../pages/BlogBeachPage'
@@ -70,7 +70,7 @@ class AppRoute extends Component {
             <Route exact path="/Discover" element={< HistoriesPage/>} />
             <Route exact path="/Honeymoon" element={< EMythBookPage/>} />
             <Route exact path="/JaffnaTour" element={< JaffnaTourPage/>} />
-            <Route exact path="/ColomboTour" element={< ColomboTourPage/>} />
+            <Route exact path="/ColomboTour" element={< SoftSkillBookPage/>} />
             <Route exact path="/KandyTour" element={< KandyTourPage/>} />
 
             <Route exact path="/BlogPopular" element={< BlogPopularPage/>} />

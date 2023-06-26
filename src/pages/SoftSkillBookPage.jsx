@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import Menu from '../components/menu/Menu'
 import Footer from '../components/footer/Footer'
-import ColomboTour from '../components/fullpackages/ColomboTour'
+import SoftSkillBook from '../components/fullpackages/SoftSkillBook'
 
-class ColomboTourPage extends Component {
+class SoftSkillBookPage extends Component {
   render() {
     return (
       <Fragment>
      <Menu />
      <div style={{ marginTop: '70px', position: 'relative' }}>
-          <ColomboTour /> 
+          <SoftSkillBook /> 
         </div>
 
       <Footer />
@@ -20,4 +20,4 @@ class ColomboTourPage extends Component {
   }
 }
 
-export default ColomboTourPage
+export default SoftSkillBookPage;
