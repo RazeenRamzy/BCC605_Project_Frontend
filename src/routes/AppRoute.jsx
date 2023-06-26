@@ -5,7 +5,7 @@ import HomePage from '../pages/HomePage'
 import Contact from '../components/contact/Contact'
 import IoTbookPage from '../pages/IoTbookPage'
 import CCodePage from '../pages/CCodePage'
-import DiscoverTourPage from '../pages/DiscoverTourPage'
+import HistoriesPage from '../pages/HistoriesPage'
 import SubscriberPage from '../pages/SubscriberPage'
 import FaqPage from '../pages/FaqPage'
 import AllBookingDetailsPage from '../pages/AllBookingDetailsPage'
@@ -67,7 +67,7 @@ class AppRoute extends Component {
 
             <Route exact path="/Popular" element={< CCodePage/>} />
             <Route exact path="/FamilyTrip" element={< BadSciPage/>} />
-            <Route exact path="/Discover" element={< DiscoverTourPage/>} />
+            <Route exact path="/Discover" element={< HistoriesPage/>} />
             <Route exact path="/Honeymoon" element={< HoneymoonTourPage/>} />
             <Route exact path="/JaffnaTour" element={< JaffnaTourPage/>} />
             <Route exact path="/ColomboTour" element={< ColomboTourPage/>} />
