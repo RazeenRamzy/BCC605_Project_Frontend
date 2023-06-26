@@ -1,15 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import Menu from '../components/menu/Menu'
 import Footer from '../components/footer/Footer'
-import Honeymoon from '../components/fullpackages/Honeymoon'
+import EMythBook from '../components/fullpackages/EMythBook'
 
-class HoneymoonTourPage extends Component {
+class EMythBookPage extends Component {
   render() {
     return (
       <Fragment>
      <Menu />
      <div style={{ marginTop: '70px', position: 'relative' }}>
-          <Honeymoon /> 
+          <EMythBook /> 
         </div>
 
       <Footer />
@@ -20,4 +20,4 @@ class HoneymoonTourPage extends Component {
   }
 }
 
-export default HoneymoonTourPage
+export default EMythBookPage;

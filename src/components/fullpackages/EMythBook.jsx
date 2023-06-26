@@ -8,7 +8,7 @@ import bookCollection from '../../asset/images/bookcollection.jpeg';
 import axios from 'axios';
 import APICALL from '../../api/APICALL';
 
-class HistoriesBook extends Component {
+class EMythBook extends Component {
     constructor() {
         super();
         this.state = {
@@ -77,48 +77,49 @@ class HistoriesBook extends Component {
                         {/* <div className="image-container">
                             <Image src={bookCollection} alt="Book Image" className="book-image" fluid />
                         </div> */}
-                       <h2>Jeremy Hutchinson’s Case Histories</h2>
+                        <h2>E-Myth Manager by Michael E. Gerber</h2>
+                       
                         <p style={{ textAlign: 'justify' }}>
-                        Jeremy Hutchinson’s Case Histories is a captivating book by Thomas Grant that delves into the fascinating legal career of renowned barrister Jeremy Hutchinson. Through a collection of gripping case studies, Grant explores Hutchinson's remarkable courtroom battles and the impact they had on shaping the legal landscape of the time. Readers will be captivated by the intricacies of each case, the legal strategies employed, and the profound social and cultural implications they carried. Join Thomas Grant on a journey through Jeremy Hutchinson’s extraordinary case histories, providing insights into the legal profession and the pursuit of justice.
+                        E-Myth Manager is an insightful book by Michael E. Gerber that delves into the essential principles and strategies for effective management in today's business world. Drawing on Gerber's extensive experience as a business consultant, this book offers practical guidance and valuable insights for managers looking to enhance their leadership skills and drive organizational success.
                         </p>
-                    </Col>
+                        </Col>
                     </Row>
 
                     <div>
-                    <Row>
-                        <Col md={8}>
-                        {/* Course Details */}
                         <Row>
-                            <Col md={10}>
-                            <h3>Course Details - Jeremy Hutchinson’s Case Histories</h3>
-                            <ul>
-                                <li>Introduction to Jeremy Hutchinson’s Case Histories</li>
-                                <li>Exploring Hutchinson's Remarkable Courtroom Battles</li>
-                                <li>Understanding the Legal Strategies Employed by Hutchinson</li>
-                                <li>Examining the Social and Cultural Implications of Hutchinson's Cases</li>
-                                <li>Analyzing Landmark Cases and Their Legal Significance</li>
-                                <li>Ethics and Professionalism in the Legal Profession</li>
-                                <li>Impact of Hutchinson's Cases on Legal Precedents</li>
-                                <li>Reflections on Justice, Equality, and the Rule of Law</li>
-                            </ul>
+                            <Col md={8}>
+                                {/* Course Details */}
+                                <Row>
+                                    <Col md={8}>
+                                    <h3>Course Details - E-Myth Manager</h3>
+                                    <ul>
+                                        <li>Understanding the Role of a Manager</li>
+                                        <li>Effective Leadership and Team Management</li>
+                                        <li>Building a High-Performance Culture</li>
+                                        <li>Strategic Planning and Goal Setting</li>
+                                        <li>Financial Management and Budgeting</li>
+                                        <li>Operations and Process Improvement</li>
+                                        <li>Employee Development and Performance Management</li>
+                                        <li>Effective Communication and Conflict Resolution</li>
+                                    </ul>
 
-                            <h3>Reserving a Book:</h3>
-                            <ul>
-                                <li>Reservation can be made up to 2 weeks in advance.</li>
-                                <li>Each student can reserve a maximum of 2 books at a time.</li>
-                                <li>Reserved books should be collected within 2 days of the reserved date.</li>
-                                <li>Failure to collect the reserved book within the specified time may result in cancellation.</li>
-                            </ul>
+                                        <h3>Reserving a Book:</h3>
+                                        <ul>
+                                            <li>Reservation can be made up to 2 weeks in advance.</li>
+                                            <li>Each student can reserve a maximum of 2 books at a time.</li>
+                                            <li>Reserved books should be collected within 2 days of the reserved date.</li>
+                                            <li>Failure to collect the reserved book within the specified time may result in cancellation.</li>
+                                        </ul>
 
-                            <h3>Returning a Book:</h3>
-                            <ul>
-                                <li>The maximum loan period is 2 weeks.</li>
-                                <li>Books must be returned on or before the due date to avoid late charges.</li>
-                                <li>Late charges for overdue books are RS.200 per day.</li>
-                            </ul>
-                            </Col>
-                        </Row>
-                        </Col>
+                                        <h3>Returning a Book:</h3>
+                                        <ul>
+                                            <li>The maximum loan period is 2 weeks.</li>
+                                            <li>Books must be returned on or before the due date to avoid late charges.</li>
+                                            <li>Late charges for overdue books are RS.200 per day.</li>
+                                        </ul>
+                                </Col>
+                                </Row>
+                                </Col>
                             
                             
                                 
@@ -199,4 +200,4 @@ class HistoriesBook extends Component {
     }
 }
 
-export default HistoriesBook;
+export default EMythBook;

@@ -16,7 +16,7 @@ import PrivacyPolicyPage from '../pages/PrivacyPolicyPage'
 import RefundPolicyPage from '../pages/RefundPolicyPage'
 import BookingDetailsEditPage from '../pages/BookingDetailsEditPage'
 import BadSciPage from '../pages/BadSciPage'
-import HoneymoonTourPage from '../pages/HoneymoonTourPage'
+import EMythBookPage from '../pages/EMythBookPage'
 import JaffnaTourPage from '../pages/JaffnaTourPage'
 import ColomboTourPage from '../pages/ColomboTourPage'
 import KandyTourPage from '../pages/KandyTourPage'
@@ -68,7 +68,7 @@ class AppRoute extends Component {
             <Route exact path="/Popular" element={< CCodePage/>} />
             <Route exact path="/FamilyTrip" element={< BadSciPage/>} />
             <Route exact path="/Discover" element={< HistoriesPage/>} />
-            <Route exact path="/Honeymoon" element={< HoneymoonTourPage/>} />
+            <Route exact path="/Honeymoon" element={< EMythBookPage/>} />
             <Route exact path="/JaffnaTour" element={< JaffnaTourPage/>} />
             <Route exact path="/ColomboTour" element={< ColomboTourPage/>} />
             <Route exact path="/KandyTour" element={< KandyTourPage/>} />
@@ -84,4 +84,4 @@ class AppRoute extends Component {
   }
 }
 
-export default AppRoute
+export default AppRoute;
