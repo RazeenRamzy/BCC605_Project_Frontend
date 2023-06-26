@@ -147,7 +147,7 @@ class Packages extends Component {
                                             <Rating name="size-medium" defaultValue={4} size="medium" readOnly />
                                             </div>
                                             <div>
-                                            <Badge bg="success">Available</Badge>
+                                            <Badge bg="danger">Unavailable</Badge>
                                             </div>
                                         </div>
                                         </Card.Text>
@@ -246,7 +246,7 @@ class Packages extends Component {
                                                 <Rating name="size-medium" defaultValue={5} size="medium" readOnly />
                                                 </div>
                                                 <div>
-                                                <Badge bg="success">Available</Badge>
+                                                <Badge bg="danger">Unvailable</Badge>
                                                 </div>
                                             </div>
                                             </Card.Text>

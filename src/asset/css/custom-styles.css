@@ -309,4 +309,104 @@ body {
 
 
 
+/*footer*/
 
+.footer-container {
+  background-color: #141415;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.footer-content {
+  justify-content: space-between;
+}
+
+.footer-column {
+  margin-bottom: 30px;
+}
+
+.footer-menu-title {
+  font-size: 18px;
+  font-weight: bold;
+  animation: slideIn 1s ease-in-out;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #f3bc0a;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  position: relative;
+  background-color: #141415;
+  padding: 10px 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.footer-bottom::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background-color: #0e367c;
+  animation: runningLight 5s infinite linear;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 200%;
+  height: 2px;
+  background-color: #940a15;
+  animation: runningLight 5s infinite linear;
+}
+
+@keyframes runningLight {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+
+.footer-text {
+  font-size: 14px;
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
