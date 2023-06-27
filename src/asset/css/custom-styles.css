@@ -389,3 +389,19 @@ body {
     color: #231818;
   }
 }
+
+.custom-heading {
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.custom-heading span {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #db360d;
+  color: #fff;
+  font-weight: normal;
+  border-radius: 5px;
+}

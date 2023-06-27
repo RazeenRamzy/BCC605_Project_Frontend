@@ -22,9 +22,10 @@ class HomePage extends Component {
       <div id="blog">
           <BlogPost />
         </div>
-      <WhyUs />
 
 <Countries />
+      <WhyUs />
+
         <Footer />
       </Fragment>
     )
