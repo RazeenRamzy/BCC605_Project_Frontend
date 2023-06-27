@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import { Container, Row, Col } from 'react-bootstrap';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import UKFlag from '../../asset/images/UK_Flag.svg.png';
+import invaluable from '../../asset/images/invaluable.jpeg';
 import canada from '../../asset/images/canada.png';
 import india from '../../asset/images/india.png';
 import australia from '../../asset/images/australia.png';
@@ -41,7 +41,7 @@ class Countries extends Component {
                         <Slider {...settings}>
                        
                             <div>
-                            <img src={UKFlag} alt="UK Flag" style={{ width: 'auto', height: '160px' }}></img>
+                            <img src={invaluable} alt="UK Flag" style={{ width: 'auto', height: '160px' }}></img>
 
                             </div>
                             <div>
@@ -61,7 +61,7 @@ class Countries extends Component {
                             </div>
                             <div>
                             <img src={pakistan} alt="pakistan Flag" style={{ width: '320px', height: '160px' }}></img>
-                            <img src={UKFlag} alt="UK Flag" style={{ width: '320px', height: '160px' }} />
+                          
                             </div>
                             <div>
                             <img src={USA} alt="USA Flag" style={{ width: '320px', height: '160px' }} />

@@ -35,7 +35,7 @@ class Footer extends Component {
           <Container fluid={true} className="footer-bottom">
             <Container>
               <Row>
-                <h6 className="footer-text">© Solent Tours | All rights reserved</h6>
+                <h6 className="footer-text">© BCAS MLibrarian | All rights reserved</h6>
               </Row>
             </Container>
           </Container>
