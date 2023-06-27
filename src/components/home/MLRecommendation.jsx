@@ -14,7 +14,7 @@ import mindBook from '../../asset/images/mindBook.jpeg';
 import schooBook from '../../asset/images/schooBook.jpeg';
 import '../../asset/css/custom-styles.css'
 
-class Countries extends Component {
+class MLRecommendation extends Component {
     render() {
         const settings = {
             dots: true,
@@ -72,4 +72,4 @@ class Countries extends Component {
     }
 }
 
-export default Countries;
+export default MLRecommendation;

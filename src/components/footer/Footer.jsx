@@ -17,7 +17,7 @@ class Footer extends Component {
 
               <Col className="footer-column" lg={4} md={4} sm={6} xs={12}>
                 <h5 className="footer-menu-title">OUR COMPANY</h5>
-                <Link to="/About" className="footer-link">About Us</Link><br />
+                <Link to="/aboutus" className="footer-link">About Us</Link><br />
                 <Link to="/Faq" className="footer-link">FAQ</Link><br />
                 <Link to="/Contact" className="footer-link"> Contact Us</Link><br />
               </Col>

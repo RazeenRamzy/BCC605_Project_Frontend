@@ -4,9 +4,9 @@ import Menu from '../components/menu/Menu'
 import Main from '../components/home/Main'
 import Footer from '../components/footer/Footer'
 import HowItsWork from '../components/home/HowItsWork'
-import WhyUs from '../components/home/WhyUs'
+import WhyMlibrarian from '../components/home/WhyMlibrarian'
 import BlogPost from '../components/home/BlogPost'
-import Countries from '../components/home/Countries'
+import MLRecommendation from '../components/home/MLRecommendation'
 
 class HomePage extends Component {
   render() {
@@ -23,8 +23,8 @@ class HomePage extends Component {
           <BlogPost />
         </div>
 
-<Countries />
-      <WhyUs />
+<MLRecommendation />
+      <WhyMlibrarian />
 
         <Footer />
       </Fragment>

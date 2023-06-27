@@ -47,7 +47,7 @@ class AppRoute extends Component {
             <Route exact path="/subscriber" element={< SubscriberPage/>} />
             <Route exact path="/faq" element={< FaqPage/>} />
             <Route exact path="/admin/bookingdetails" element={<AllBookingDetailsPage/>} />
-            <Route exact path="/about-us" element={<AboutUsPage/>} />
+            <Route exact path="/AboutUs" element={<AboutUsPage/>} />
             <Route exact path="/HowToPurchase" element={<HowToPurchasePage/>} />
             <Route exact path="/PrivacyPolicy" element={<PrivacyPolicyPage/>} />
             <Route exact path="/RefundPolicy" element={<RefundPolicyPage/>} />
