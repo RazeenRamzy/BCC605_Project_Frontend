@@ -1,104 +1,66 @@
-import React, { Component, Fragment } from 'react'
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
-import blogimg1 from '../../asset/images/blogpop.jpg'
-import blogimg2 from '../../asset/images/IMG2.png'
-import blogimg3 from '../../asset/images/blogella.jpg'
-import blogimg4 from '../../asset/images/bloggalle.jpg'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-class BlogPost extends Component {
-    render() {
-        return (
-            <Fragment>
-                <Container className="py-5" fluid={true}>
-                <hr className="line" />
-                    <h3 className="text-center">MLibrarian Recommendations for You</h3>
-                    <Row className="mt-4">
-                        <Col md={6} lg={4} xl={3} className="mb-4">
-                            <Card style={{ height: '100%' }}>
-                                <Card.Img variant="top" src={blogimg1} />
-                                <Card.Body>
-                                    <Card.Title>Top 5 most popular spots to visit in Sri Lanka</Card.Title>
-                                        <Card.Text>
-                                        Sri Lanka is a hub that consists of a quite a number of popular locations for people to visit 
-                                        </Card.Text>
+const MLibrarian = () => {
+  const [searchHistory, setSearchHistory] = useState([]);
+  const [recommendedBooks, setRecommendedBooks] = useState([]);
 
-                                    <Button className="text-center" variant="secondary">
-                                        <a href="/#" className="mb-4">  
-                                            <Link to="/BlogPopular" style={{ color: 'white' }}>Click here to read more!</Link>                                 
-                                        </a>
-                                    </Button> 
-                                    
-                                </Card.Body>
-                            </Card>
-                        </Col>
+  useEffect(() => {
+    // Simulated search history data
+    const mockSearchHistory = ['machine learning','game and animation','cooking',];
 
-                        {/* Duplicate the above Card component as needed */}
+    // Update the search history state
+    setSearchHistory(mockSearchHistory);
 
-                        <Col md={6} lg={4} xl={3} className="mb-4">
-                            <Card style={{ height: '100%' }}>
-                                <Card.Img variant="top" src={blogimg2} />
-                                <Card.Body>
-                                    <Card.Title>Top 5 most relaxing beaches to visit in Sri Lanka</Card.Title>
-                                        <Card.Text>
-                                        It is a well- known fact that beaches in Sri Lanka are globally popular for its beauty and relaxing environment 
-                                        </Card.Text>
-                                    
-                                    <Button className="text-center" variant="secondary">
-                                        <a href="/#" className="mb-4">  
-                                            <Link to="/BlogBeach" style={{ color: 'white' }}>Click here to read more!</Link>                                 
-                                        </a>
-                                    </Button>
+    // Call the recommendation algorithm
+    recommendBooks(mockSearchHistory);
+  }, []);
 
-                                </Card.Body>
-                            </Card>
-                        </Col>
+  const recommendBooks = async (searchHistory) => {
+    try {
+      // Get book recommendations from the Google Books API
+      const apiKey = 'AIzaSyAXhwkDUZukuYDhEfXNWjBsOPIipX2zDOI';
+      const response = await axios.get(
+        `https://www.googleapis.com/books/v1/volumes?q=${searchHistory.join(
+          '+'
+        )}&key=${apiKey}&maxResults=10`
+      );
 
-                        <Col md={6} lg={4} xl={3} className="mb-4">
-                            <Card style={{ height: '100%' }}>
-                                <Card.Img variant="top" src={blogimg3} />
-                                <Card.Body>
-                                    <Card.Title>Top 5 exciting things to do in Ella, Sri Lanka</Card.Title>
-                                        <Card.Text>
-                                        Ella is known as a popular destination for a range of fun activities and for its beautiful scenery 
-                                        </Card.Text>
+      console.log('API Response:', response.data); // Log the API response
 
-                                    <Button className="text-center" variant="secondary">
-                                        <a href="/#" className="mb-4">  
-                                            <Link to="/BlogElla" style={{ color: 'white' }}>Click here to read more!</Link>                                 
-                                        </a>
-                                    </Button> 
+      // Extract the book items from the response data
+      const books = response.data.items || [];
 
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-                        <Col md={6} lg={4} xl={3} className="mb-4">
-                            <Card style={{ height: '100%' }}>
-                                <Card.Img variant="top" src={blogimg4} />
-                                <Card.Body>
-                                    <Card.Title>Galle Fort Guide: <br></br> What to do & How to visit</Card.Title>
-                                        <Card.Text>
-                                        The Galle Fort is considered the most beautiful coastal town for people to visit in Sri Lanka
-                                        </Card.Text>
-                                    
-                                    <Button className="text-center" variant="secondary">
-                                        <a href="/#" className="mb-4">  
-                                            <Link to="/BlogGalleFort" style={{ color: 'white' }}>Click here to read more!</Link>                                 
-                                        </a>
-                                    </Button>
-
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-                        {/* Duplicate the above Card component as needed */}
-
-                    </Row>
-                </Container>
-            </Fragment>
-        )
+      // Update the recommended books state
+      setRecommendedBooks(books);
+    } catch (error) {
+      console.error('Error fetching book recommendations:', error);
     }
-}
+  };
 
-export default BlogPost
+  return (
+    <div>
+      <h1>MLibrarian</h1>
+      <h2>Search History:</h2>
+      <ul>
+        {searchHistory.map((query, index) => (
+          <li key={index}>{query}</li>
+        ))}
+      </ul>
+      <h2>Recommended Books:</h2>
+      <div>
+        {recommendedBooks.map((book) => (
+          <div key={book.id}>
+            <img
+              src={book.volumeInfo.imageLinks.thumbnail || ''}
+              alt={book.volumeInfo.title || ''}
+            />
+            <p>{book.volumeInfo.title || ''}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MLibrarian;
