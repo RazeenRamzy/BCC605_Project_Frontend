@@ -63,7 +63,7 @@ class Menu extends Component {
                 <Nav.Link eventKey={2} href="/hotels">
                   Books
                 </Nav.Link>
-                <Nav.Link eventKey={2} href="/admin/bookingdetails">
+                <Nav.Link eventKey={2} href="https://bcas.lk">
                   BCAS
                 </Nav.Link>
                 <Nav.Link eventKey={2} href="/Login">

@@ -14,14 +14,17 @@ class Contact extends Component {
                     <Row className="mt-4">
                         <Col md={6} lg={4} xl={12} className="mb-4">
                            
-                            <p className='text-center'style={{fontWeight:'light', fontSize:'15px',}}>We value your feedback and are here to assist you. If you have any questions, suggestions, or concerns, 
-                                    please feel free to reach out to us. Our dedicated team is ready to provide the support you need.
-                                    If you prefer, you can use the contact form below to send us a message directly. Please provide us with 
-                                    your name, email address, and a brief description of your inquiry. We will get back to you as soon as possible.
-                                    We value your privacy and assure you that any information you provide will be kept confidential and used solely 
-                                    for the purpose of assisting you. 
-                                    Thank you for choosing our Solent Travels. We look forward to hearing from you and assisting you with your 
-                                     travel needs.</p>
+                        <p className="text-center" style={{ fontWeight: 'light', fontSize: '15px' }}>
+                            We value your feedback and are here to assist you. If you have any questions, suggestions, or concerns,
+                            please feel free to reach out to us. Our dedicated team is ready to provide the support you need.
+                            If you prefer, you can use the contact form below to send us a message directly. Please provide us with
+                            your name, email address, and a brief description of your inquiry. We will get back to you as soon as possible.
+                            We value your privacy and assure you that any information you provide will be kept confidential and used solely
+                            for the purpose of assisting you.
+                            Thank you for belaving BCAS MLibrarian. We look forward to hearing from you and assisting you with your
+                            library needs.
+                          </p>
+
                         </Col>
                    
     <div style={{ position: 'relative',top:'100%', left:'4% '}} className='col-md-4 col-lg-4'>
@@ -91,7 +94,7 @@ class Contact extends Component {
 
   <div class="col-md-4">
     <a class="btn-floating blue accent-1"><i class="material-icons">mail</i></a>
-    <p>solent_tour@gmail.com</p>
+    <p>mlibrarian@bcas.lk</p>
 
   </div>
   </div>

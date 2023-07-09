@@ -1,58 +1,54 @@
-import React, { Component, Fragment } from 'react'
+import React, { useState } from 'react';
+import newsletterImage from '../../asset/images/bk1.jpeg';
+import '../../asset/css/custom-styles.css';
 
-export class Subscriber extends Component {
-  constructor(props) {
-    super(props);
+const NewsletterSubscribe = () => {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
-    this.state = {
-      email: '',
-    };
-  }
-
-  handleEmailChange = (e) => {
-    this.setState({ email: e.target.value });
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // Perform subscriber logic here, such as sending the data to an API
 
-    // Reset form field
-    this.setState({ email: '' });
+    // Display success message
+    setSubscribed(true);
+    setEmail('');
   };
 
-  render() {
-    const { email } = this.state;
-
-    return (
-      <div className="subscribe-container">
-
-        <Fragment>
-          <div className="top-title">Be the first to know about upcoming tours, cultural
-            events, and immersive experiences by subscribing to our Tourism Newsletter </div>
-
-          <form className="subscribe-form" onSubmit={this.handleSubmit}>
-
-            <h2 className="subscribe-title">Subscribe now by providing your Email below</h2>
-            <br /><br />
-            <label className="subscribe-label">
-              E-mail:
+  return (
+    <div className="newsletter-container">
+      <div className="newsletter-image-container">
+        <img src={newsletterImage} alt="Newsletter" className="newsletter-image" />
+      </div>
+      <div className="newsletter-content">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p className="newsletter-description">
+          Stay up to date with the latest news, events, and offers from MLibrarian.
+        </p>
+        {subscribed ? (
+          <p className="newsletter-success-message">Thank you for subscribing!</p>
+        ) : (
+          <form className="newsletter-form" onSubmit={handleSubmit}>
+            <label htmlFor="email" className="newsletter-label">Email:</label>
+            <div className="newsletter-input-container">
               <input
                 type="email"
-                className="subscribe-input"
+                id="email"
                 value={email}
-                onChange={this.handleEmailChange}
+                onChange={handleEmailChange}
+                required
+                className="newsletter-input"
               />
-            </label>
-
-            <button className="subscribe-button" type="submit">
-              Subscribe
-            </button>
+              <button type="submit" className="newsletter-button">Subscribe</button>
+            </div>
           </form>
-        </Fragment>
+        )}
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-export default Subscriber
+export default NewsletterSubscribe;
