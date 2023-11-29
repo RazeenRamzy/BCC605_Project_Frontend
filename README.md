@@ -1,4 +1,4 @@
-# Solent Tour Management
+# MLibrarian ML Based Library Management System
 
 This project is a web application built with React.js for managing Solent tours. It provides a user-friendly interface for creating, updating, and retrieving tour information.
 
