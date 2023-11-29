@@ -4,9 +4,9 @@ This project is a web application built with React.js for managing Solent tours.
 
 
 # Setup
-1. Clone the repository: `git clone https://github.com/Solent-Team/tour_system_solent_frontend.git`
+1. Clone the repository: `https://github.com/RazeenRamzy/BCC605_Project_Frontend.git`
 
-2. Install dependencies: `cd solent-tour-management` then `npm install`
+2. Install dependencies: `cd BCC605_Project_Frontend` then `npm install`
 
 
 # Running the Application
@@ -19,6 +19,11 @@ The application will start and be accessible at http://localhost:3000 in your we
 - React.js: A JavaScript library for building user interfaces.
 - React Router: A routing library for React that enables navigation within the application.
 - Axios: A library for making HTTP requests to the backend API.
+- Tensorflow JS
+- CSS 3
+- Metrial UI
+- Google Book API
+- more
 
 
 # API Configuration
